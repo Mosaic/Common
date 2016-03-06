@@ -3,7 +3,7 @@
 namespace Mosaic\Support;
 
 use ArrayAccess;
-use Mosaic\Contracts\Support\Arrayable;
+use Mosaic\Support\Arrayable;
 
 class ArrayObject implements Arrayable, ArrayAccess
 {

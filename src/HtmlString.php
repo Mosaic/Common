@@ -2,7 +2,7 @@
 
 namespace Mosaic\Support;
 
-use Mosaic\Contracts\Support\Stringable;
+use Mosaic\Support\Stringable;
 
 class HtmlString implements Stringable
 {
