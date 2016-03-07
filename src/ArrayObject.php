@@ -3,7 +3,6 @@
 namespace Mosaic\Common;
 
 use ArrayAccess;
-use Mosaic\Common\Arrayable;
 
 class ArrayObject implements Arrayable, ArrayAccess
 {

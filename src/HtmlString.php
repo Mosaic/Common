@@ -2,8 +2,6 @@
 
 namespace Mosaic\Common;
 
-use Mosaic\Common\Stringable;
-
 class HtmlString implements Stringable
 {
     /**
