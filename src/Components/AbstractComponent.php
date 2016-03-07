@@ -17,6 +17,14 @@ abstract class AbstractComponent implements Component
     protected static $custom = [];
 
     /**
+     * @param string $implementation
+     */
+    protected function __construct(string $implementation)
+    {
+        $this->setImplementation($implementation);
+    }
+
+    /**
      * @return string
      */
     public function getImplementation()
@@ -66,8 +74,8 @@ abstract class AbstractComponent implements Component
     }
 
     /**
-     * @param  string    $name
-     * @param  array     $arguments
+     * @param  string $name
+     * @param  array  $arguments
      * @return Component
      */
     public static function __callStatic(string $name, array $arguments = []) : Component
