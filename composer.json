@@ -1,5 +1,5 @@
 {
-  "name": "mosaic/support",
+  "name": "mosaic/common",
   "description": "",
   "keywords": [
 
@@ -25,12 +25,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Mosaic\\Support\\": "src/"
+      "Mosaic\\Common\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mosaic\\Support\\Tests\\": "tests/"
+      "Mosaic\\Common\\Tests\\": "tests/"
     }
   }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Mosaic\Support;
+namespace Mosaic\Common;
 
 use ArrayAccess;
-use Mosaic\Support\Arrayable;
+use Mosaic\Common\Arrayable;
 
 class ArrayObject implements Arrayable, ArrayAccess
 {

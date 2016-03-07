@@ -1,6 +1,6 @@
 <?php
 
-namespace Mosaic\Support;
+namespace Mosaic\Common;
 
 interface Arrayable
 {

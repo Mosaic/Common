@@ -1,8 +1,8 @@
 <?php
 
-namespace Mosaic\Support;
+namespace Mosaic\Common;
 
-use Mosaic\Support\Stringable;
+use Mosaic\Common\Stringable;
 
 class HtmlString implements Stringable
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Mosaic\Support\Tests;
+namespace Mosaic\Common\Tests;
 
-use Mosaic\Support\Arr;
+use Mosaic\Common\Arr;
 use PHPUnit_Framework_TestCase;
 
 class ArrTest extends PHPUnit_Framework_TestCase
