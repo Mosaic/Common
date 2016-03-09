@@ -2,12 +2,14 @@
 
 namespace Mosaic\Common\Components;
 
+use Interop\Container\Definition\DefinitionProviderInterface;
+
 interface Component
 {
     /**
-     * @return array
+     * @return DefinitionProviderInterface[]
      */
-    public function getDefinitions() : array;
+    public function getProviders() : array;
 
     /**
      * @param string   $name

@@ -43,7 +43,7 @@ abstract class AbstractComponent implements Component
     /**
      * @return array
      */
-    public function getDefinitions() : array
+    public function getProviders() : array
     {
         $method = 'resolve' . ucfirst($this->getImplementation());
 
