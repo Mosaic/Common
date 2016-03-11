@@ -17,6 +17,11 @@ interface FolderStructureConvention
     /**
      * @return string
      */
+    public function storagePath() : string;
+
+    /**
+     * @return string
+     */
     public function viewCachePath() : string;
 
     /**

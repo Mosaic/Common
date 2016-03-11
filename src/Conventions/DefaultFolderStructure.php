@@ -14,7 +14,7 @@ class DefaultFolderStructure implements FolderStructureConvention
      */
     public function __construct(string $basePath)
     {
-        $this->basePath = $basePath;
+        $this->basePath = rtrim($basePath, '\/');
     }
 
     /**
@@ -31,8 +31,16 @@ class DefaultFolderStructure implements FolderStructureConvention
     public function viewPaths() : array
     {
         return [
-            $this->basePath . '/resources/views'
+            $this->basePath . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'views'
         ];
+    }
+
+    /**
+     * @return string
+     */
+    public function storagePath() : string
+    {
+        return $this->basePath . DIRECTORY_SEPARATOR . 'storage';
     }
 
     /**
@@ -40,7 +48,7 @@ class DefaultFolderStructure implements FolderStructureConvention
      */
     public function viewCachePath() : string
     {
-        return $this->basePath . '/storage/views';
+        return $this->storagePath() . DIRECTORY_SEPARATOR . 'views';
     }
 
     /**
@@ -48,6 +56,6 @@ class DefaultFolderStructure implements FolderStructureConvention
      */
     public function cachePath() : string
     {
-        return $this->basePath . '/storage/cache';
+        return $this->storagePath() . DIRECTORY_SEPARATOR . 'cache';
     }
 }

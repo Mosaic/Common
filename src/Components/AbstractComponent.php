@@ -51,11 +51,7 @@ abstract class AbstractComponent implements Component
             return $this->resolveCustom(static::$custom[$this->getImplementation()]);
         }
 
-        if (method_exists($this, $method)) {
-            return call_user_func([$this, $method]);
-        }
-
-        return [];
+        return call_user_func([$this, $method]);
     }
 
     /**
@@ -74,8 +70,8 @@ abstract class AbstractComponent implements Component
     }
 
     /**
-     * @param  string $name
-     * @param  array  $arguments
+     * @param  string    $name
+     * @param  array     $arguments
      * @return Component
      */
     public static function __callStatic(string $name, array $arguments = []) : Component
