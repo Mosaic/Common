@@ -27,7 +27,7 @@ abstract class AbstractComponent implements Component
     /**
      * @return string
      */
-    public function getImplementation()
+    public function getImplementation() : string
     {
         return $this->implementation;
     }
@@ -84,10 +84,10 @@ abstract class AbstractComponent implements Component
     }
 
     /**
-     * @param $name
+     * @param  string $name
      * @return bool
      */
-    protected static function hasImplementation($name) : bool
+    protected static function hasImplementation(string $name) : bool
     {
         return isset(static::$custom[$name]) || method_exists(get_called_class(), 'resolve' . ucfirst($name));
     }

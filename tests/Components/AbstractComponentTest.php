@@ -51,20 +51,49 @@ class AbstractComponentTest extends \PHPUnit_Framework_TestCase
             new StubProvider()
         ], $component->getProviders());
     }
+
+    public function test_can_pass_arguments_to_component()
+    {
+        $component = SomeComponent::impl('foo', 'bar');
+
+        $this->assertEquals([
+            new StubProvider('foo', 'bar')
+        ], $component->getProviders());
+    }
+
+    public function test_can_pass_arguments_to_custom_component()
+    {
+        SomeComponent::extend('custom', function ($foo, $bar) {
+            $this->assertEquals('foo', $foo);
+            $this->assertEquals('bar', $bar);
+        });
+
+        SomeComponent::custom('foo', 'bar');
+    }
 }
 
 class SomeComponent extends AbstractComponent
 {
+    private $foo;
+    private $bar;
+
+    public function __construct($impl, $foo = null, $bar = null)
+    {
+        parent::__construct($impl);
+        $this->foo = $foo;
+        $this->bar = $bar;
+    }
+
     public function resolveImpl()
     {
         return [
-            new StubProvider
+            new StubProvider($this->foo, $this->bar)
         ];
     }
 
     public function resolveCustom(callable $callback) : array
     {
-        return $callback();
+        return $callback($this->foo, $this->bar);
     }
 }
 
